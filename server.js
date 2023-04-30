@@ -4,7 +4,7 @@ const api = require("./api");
 const fs = require("fs");
 
 // application state
-let db = require("./db.json");
+//let db = require("./db.json");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
