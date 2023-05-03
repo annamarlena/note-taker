@@ -10,4 +10,4 @@ Open [https://marlenas-note-taker.herokuapp.com/](https://marlenas-note-taker.he
 
 ## Screenshot of Deployed App
 
-![Here's a screenshot of the deployed application.](.public/assets/images/screenshot.png)
+![Here's a screenshot of the deployed application.](./public/assets/images/screenshot.png)
