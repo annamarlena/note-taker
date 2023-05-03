@@ -59,7 +59,7 @@ app.post('/api/notes', (req, res) => {
           )
       );
 
-      res.json(notesData);
+      res.json(notes);
       const response = {
         status: 'success',
         body: newNote,
@@ -102,3 +102,20 @@ const response = {
   body: newNote,
 };
 
+app.delete("/api/notes/:id", (req, res) => {
+  fs.readFile("./db/db.json", "utf8", (err, data) => {
+    if(err) return console.log(err);
+    console.log(data)
+    let notes = JSON.parse(data)
+    let filteredNotes = notes.filter((note) => note.id != req.params.id)
+    console.log(filteredNotes)
+    fs.writeFile(`./db/db.json`, JSON.stringify(filteredNotes), (err) =>
+    err
+      ? console.error(err)
+      : console.log(
+          `Review for ${newNote.title} has been written to JSON file`
+        )
+    );
+    res.json(filteredNotes);
+  })
+})
