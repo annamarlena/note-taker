@@ -15,10 +15,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/api/notes", (req, res) => {
-  res.json(notesData)
-})
-
 app.get("/api/notes", (req, res) => 
 fs.readFile("./db/db.json", "utf8", (err, data) => {
   if(err) return console.log(err);
